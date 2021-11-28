@@ -684,14 +684,19 @@ body {
   width: 100vw;
   height: 100vh;
 
-  transition: opasiyt(700ms);
+  transition: opacity 700ms, visibility 700ms;
+}
+.backdrop.is-hidden .modal {
+  transform: scale(0.75) translateX(-1200px) translateY(-1000px);
+  transition: transform var(--transition-duration);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: scale(1);
   transform: translate(-50%, -50%);
-
+  transition: transform var(--transition-duration);
   width: 528px;
   min-height: 581px;
 
@@ -701,6 +706,7 @@ body {
   box-sizing: border-box;
   border-radius: 4px;
 }
+
 .modal-close {
   position: absolute;
   top: 8px;
@@ -716,9 +722,10 @@ body {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  transition: opasity(700ms);
 }
 .is-hidden {
-  visibility: visible;
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
