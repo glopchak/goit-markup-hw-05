@@ -466,7 +466,8 @@ body {
   background-color: var(--second-btn-color);
 
   transition: background-color var(--transition-duration) var(--timing-function),
-    color var(--transition-duration) var(--timing-function);
+    color var(--transition-duration) var(--timing-function),
+    box-shadow var(--transition-duration) var(--timing-function);
 }
 .btn-filter:hover,
 .btn-filter:focus {
@@ -543,7 +544,7 @@ body {
 
   background-color: var(--projecrs-overlay-color);
 
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform var(--transition-duration) var(--timing-function);
 }
 
@@ -553,7 +554,12 @@ body {
 .project-link:hover .overlay-text {
   transform: translateY(0);
 }
-
+.project-link:focus .projecrs-overlay::before {
+  transform: translateY(0);
+}
+.project-link:focus .overlay-text {
+  transform: translateY(0);
+}
 .overlay-text {
   position: absolute;
   content: '';
